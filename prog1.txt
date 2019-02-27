@@ -1,0 +1,40 @@
+public class Convert
+{
+   public static void main(String[] args)
+   {
+     if (args[0].equals("C2F")
+       System.out.printl((Integer.parseInt(args[1])*9/5)+32)
+     else if(arg[0].equals("F2C")
+       System.out.println("Integer.parseInt(args[1])-32)*5/9)
+     else if(arg[0].equals("O2G")
+       System.out.println("Integer.parseInt(args[1])*28.35)
+     else if(arg[0].equals("G2O")
+       System.out.println("Integer.parseInt(args[1])/28.35)
+     else if(arg[0].equals("P2K")
+       System.out.println("Integer.parseInt(args[1])/2.205)
+     else if(arg[0].equals("K2P")
+       System.out.println("Integer.parseInt(args[1])*2.205)
+     else if(arg[0].equals("Q2L")
+       System.out.println("Integer.parseInt(args[1])/1.057)
+     else if(arg[0].equals("L2Q")
+       System.out.println("Integer.parseInt(args[1])*1.057)
+     else if(arg[0].equals("I2C")
+       System.out.println("Integer.parseInt(args[1])*2.54)
+     else if(arg[0].equals("C2L")
+       System.out.println("Integer.parseInt(args[1])/2.54)
+     else if(arg[0].equals("M2K")
+       System.out.println("Integer.parseInt(args[1])*1.609)
+     else if(arg[0].equals("K2M")
+       System.out.println("Integer.parseInt(args[1])/1.609)
+     else
+       System.out.println("Invalid Option")
+}
+}
+
+     
+
+
+
+
+   }
+}
