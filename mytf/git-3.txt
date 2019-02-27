@@ -1,0 +1,162 @@
+Working on Git Remote repository(github)
+=============================================
+1 Open github.com
+2 Signup for a free account
+3 Signin into that account
+4 Click on + icon on top right corner--->Click on New repository
+5 Enter some name for the repository
+6 click on Create repository
+7 Go to "push an existing repository from the command line"
+8 Copy the 1st command and paste in gitbash
+  This command will create a link between the git localrepository
+  and the github rmeote repository
+9 git push -u origin master
+  enter username and password of github
+  This will upload the code into the remote github server
+  This process is called checkin
+
+Downloading the code from github
+====================================
+This can be done in 3 ways
+1) git clone
+2) git fetch
+3) git pull
+
+git clone is used to download the entire repository into the local machine.
+It will downlaod all the files irresepective of whether those files are already present on out machine or not
+
+Initially the team lead creates the fodler structrue and all the developers will perfrom a clone operation into their machines.All the code with the basic fodler structure is downloaded.
+
+git fetch will work only when there are some modifications in  the data
+ie the data present in the local repository is different from the data 
+present on the remote repository.
+git fetch will download the modified data and store it on a remote branch
+We can go to the remote branch check if the code changes are accpetable 
+or not it they are acceptable merge the remote branch with the master branch.
+
+1 Open git hub.com
+2 Click on any file--->Click on Edit icon and edit that file
+3 Click on commit changes
+4 Open gitbash
+5 git fetch
+  The modified data will not be visible on master,it will be present on a
+  remote branch
+6 git branch -a
+  Identify the name of the remote branch from the above output
+7 Move to that remote branch
+  git checkout -b remotes/origin/master
+8 View the modified files.If it is acceptable move to master and merge
+  git checkout master
+  git merge remotes/origin/master
+
+
+git pull will also work only when there are modifications and it will download
+only the modified files but it will directly merge it with master branch
+1 Open git hub.com
+2 Click on any file--->Click on Edit icon and edit that file
+3 Click on commit changes
+4 Open gitbash
+5 git pull
+  The modified files will be visible in master branch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+

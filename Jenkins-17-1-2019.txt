@@ -1,0 +1,22 @@
+Email Notifications
+=========================
+1 Open the dashboard of jenkins
+2 Go to the Development job---->click on configure
+3 Go to Post build actions--->Add post build action
+4 Click on Email notifications
+5 Enter the email ids of the team members seperated by space
+6 Apply--->save
+7 Open the dashboard of jenkins
+8 Click on Manage Jenkins
+9 Click on Configure System
+10 Go to Email notifications
+11
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+Installing Jenkins on Windows
+=================================
+1 Download and install Jdk 1.8 or jdk 1.9
+2 Open https://jenkins.io/download/
+3 Goto LTS(Logn term support)
+4 Download the version related to Windows
+5 Extract it and install it
+6 Once jenkins is installed to access the home page of jenkins
+  Launch any browser
+  localhost:8080
+7 Enter the admin password to Unlock jenkins
+8 Click on "Install Suggested Plugins"
+9 Create first admin user--->continue
+
+Setting  the Path of git in jenkins
+=======================================
+1 Download and install git
+  https://git-scm.com/downloads
+2 Open c:-->Program files-->Git-->bin
+  Copy the path of git.exe
+3 Open the dashboard of jenkins(loclahost:8080)
+4 Click on Manage jenkins
+5 Click on Global tool configurations
+6 Go to Git section
+7 Enter some name for git (mygit)
+8 Paste the path of git.exe
+9 Apply--->save
+
+Stage -1(Continuous Download)
+=================================
+1 Open the dashboard of jenkins
+2 Click on Newitem--->enter item name as "Development"
+3 Select Free Style project-->OK'
+4 Go to Source code management
+5 Select Git--->enter github url where developer has uploaded the   code
+  https://github.com/selenium-saikrishna/maven.git
+6 Click on Apply--->Save
+7 Go to the dashboard of jenkins
+8 Go to the Development job--->Click on Build icon
+  The above job will download all the code from the github   repository into the local machine
+
+Setting the path of maven in Jenkins
+========================================
+1 Open https://maven.apache.org/download.cgi
+2 Go to files section--->Downloa the apache maven bin.zip version
+3 Extract it  and open it--->copy its path
+4 Open the dashboard of jenkins(localhost:8080)
+5 Click on Manage jenkins
+6 Click on Global tool configurations
+7 Go to Maven section--->click on Maven installations
+8 Enter some name for maven(mymaven)
+9 Uncheck Install automatically
+10 Paste the path of maven in MAVEN_HOME section
+11 Apply--->save
+
+Stage 2 (Continuous Build)
+===============================
+1 Open the dashboard of jenkins
+2 Go to the Development job
+3 Click on Configure
+4 Go to Build section
+5 Click on Add build step
+6 Click on "Invoke top level maven targets"
+7 Select maven as mymaven
+8 Enter goal as   package
+9 Apply--->Save
+10 Go to the dashboard of jenkins--->Go to the Development job
+11 Click on Build icon
+   This job will create an artifact from the code that was downloaded from the github repository.This artifact is created in the form of a war file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+
+
+WildCard Characters
+=======================
+*  represents 0 or more unknown characters
+?  represents only one unknown character
+[ ]   anything specified in [] only one chatracter is picked up
+^     This is for reverse operation ie it will not select the character given in        []
+
+1 To display all the files whose name start with "fil"
+  ls -l fil*
+
+2 To copy all the file whose name ends with "le" into dir1 directory
+  cp *le dir1
+
+3 To delete all file which start with 'f' and end with 'e' in between we can    have any characters
+   rm f*e
+
+4 To perfrom long lisiting of all file which start with "file" and have only one
+  last character after "file"
+  ls -l file?
+
+5 Move all files whose name start with any character but the next three   characters are "ile" and the ending characters can be anything into dir1
+  mv ?ile* dir1
+
+6 Display all the hidden files only
+  ls -l .*
+
+7 Delete all the hidden files
+  rm .*
+
+8 Display all files whose first character is eiter a or b or c
+  ls -l [abc]*
+
+9 Display all files whose first character is not a or b or c
+  ls -l [^abc]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

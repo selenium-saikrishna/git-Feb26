@@ -1,0 +1,160 @@
+
+
+Configuring tomcat on windows
+================================
+1 Download apachetomcat7 from
+  https://tomcat.apache.org/download-70.cgi
+  Go to Binary distributuions and download the zip version
+2 Extract it--->open it
+3 Since tomcat and jenkins run on port no 8080 it will create a   conflict
+  To change the port numbe rof tomcat
+  open server.xml file
+  Search for "Connector port=8080 and change the number to 8899
+4 Jenkins requires username and password of tomcat to perfrom   deployment of artifact
+  Open tomcat-users.xml file
+  Enter the below statement
+  <user username="intelliq" password="myintelliq" roles="manager-                                                           script"/>
+
+5 To start tomcat
+  Open bin folder in tomcat--->click on startup.bat
+
+6 To open the home page of tomcat
+  Launch any browser
+  localhost:8899
+
+
+Stage 3 (Continuous Deployment)
+==================================
+1 Open the dashboard of Jenkins
+2 Click on Manage jenkins
+3 Click on Manage plugins
+4 Go to Available section--->Search for Deploy to container plugin
+5 Install it
+6 Go to the dashboard of jenkins
+7 Go to the "Development" job--->click on configure
+8 Go to Post build actions
+9 Click on Add post build action
+10 Click on Deploy war/ear to container
+
+Stage 4 Continuous Testing
+==============================
+1 Open the dashboard of jenkins
+2 Click on New item--->enter item name as "Testing"
+3 Go to Source code management
+4 Select Git-->enter github url where tester have uploaded the   selenium programs
+  https://github.com/selenium-saikrishna/FunctionalTesting.git
+5 Go to build section--->Click on Add build step
+6 Click on Execute Windows Batch command
+7 Enter the below command
+  java -jar testing.jar
+8 Click on Apply--->save
+9 Go to the dashboard of jenkins--->Go to the Testing job
+10 Click on Build icon
+The above job will download the selenium testing programs from github  and execute them.
+
+
+Linking the Development job with Testing job
+==============================================
+1 Open the dashboard of jenkins
+2 Go to the Development job
+3 Click on Configure
+4 Go to Post build actions--->click on Add post build action
+5 Click on Build other projects
+6 Enter project name as "Testing"
+7 Click on Apply--->save
+
+Now if we run the Development job it will also trigger the Testing job.Here Development job is called Upstream job and Testing job is called Downstream job
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

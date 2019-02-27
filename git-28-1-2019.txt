@@ -1,0 +1,280 @@
+
+.gitignore
+==============
+This is a special hidden file which is used to store files that should not be accessable by git
+When a developer creates code he might have files that he doesnot want ot share with his team members.All such file names should be mentioned in 
+.gitignore
+
+Steps
+------
+1 Create few file
+  touch file1 file2 file3 file4 file5
+
+2 Check the status of git
+  git status
+  The newly created files should be shown as untracked files
+
+3 We want to hide file4 and file5
+  cat > .gitignore
+  file4
+  file5
+  To come out of cat command press ctrl+d  (EOF)
+
+4 Check the status of git
+  git status
+  file4 and file5 will no longer be shown as untracked file
+  Further commands of git will not effect them.
+
+
+Branches
+===========
+This is a feature of git which allows developers to create code realted to multiple functionalities on spearate branches so that coding can happen in an uncluttered way.Once the functionalities are fully developed we can merge them with the master
+
+1 To see the list of local branches
+  git branch
+
+2 To see the list of all branches(local and remote)
+  git branch -a
+
+3 To create a new branch
+  git branch branchname
+
+4 To move into a branch
+  git checkout branchname
+
+5 To create a branch and also move into it
+  git checkout -b branchname
+
+6 To merge a branch with master
+  a)Move to master
+    git checkout master
+  b) Merge the branch
+     git merge branchname
+
+7 To delete a branch that is merged
+  git branch -d branchname
+  This is also called soft delete
+
+8 To delete a branch that is not merged
+  git branch -D branchname
+  This is called hard delete
+
+
+Note 1: whenever a branch is created all the commit hsitory in the master branch till that time will be copied into the new branch.
+
+Note 2: Irresepective of where a file is created git only counts from which branch it was commited and that file belongs to that commit.
+
+Working on git remote repository
+===================================
+1 Open github.com---->Signup for a free account
+2 Signin into that account
+3 Click on + on the top right corner
+4 Click on New Repository
+5 Enter some repository name
+6 Select Public---->Click on Create Repository
+7 Go to "push an existing repository from the command line"
+8 Copy and paste the 1st command.This will create a link between the local
+  repository and remote repository
+9 Copy and paste the 2nd command
+  git push -u origin master
+  Enter username and password of github
+
+   This process is called checkin
+
+
+Downloading code from the git remote repository
+=================================================
+To download the code from git we have 3 ways
+1 git clone
+2 git fetch
+3 git pull
+
+
+git clone
+===============
+This will download the entire repository into the local machine irrespective of whether that code is already present or not .
+
+syntax 
+git clone github-url
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+--link   option
+Docker compose
+Docker Networking
+Pythin scripts
+
+
+Using the --link option
+--------------------------
+UseCase
+Start 2 busybox containers and link them.check if they are pingable or not
+
+1 Start 1st busybox container
+  docker run --name c1 -it busybox
+
+2 To come out of the container without exit
+  ctrl+p,ctrl+q
+
+3 Start another busybox container and link with the 1st container
+  docker run --name c2 -it --link c1:c1-alias busybox
+ 
+4 In c2 container check if we can ping to c1
+  ping c1
+
+
+Creating a Dev environment using docker
+-----------------------------------------
+Start a mysql container and link it with wordpress container.
+
+1 Start mysql container
+  docker run --name mydb -d -e MYSQL_ROOT_PASSWORD=intelliq mysql:5
+
+2 Start wordpress and link with mysql
+  docker run --name mysite -d --link mydb:mysql -p 7878:80 wordpress
+
+3 To access the home page of wordpress
+  Launch any borwser
+  ipaddress_of_dockerhost:7878
+
+4 Developer should be able to create a sample website
+
+
+UseCase
+============
+Setup CI-CD environment where jenkins container is linked with 2 tomcat containers
+
+1 Start jenkins as a container
+  docker run --name devserver -it -p 5050:8080 -d jenkins
+
+2 To access the home page of jenkins
+  Launch any browser
+  ipaddress_of_dockerhost:5050
+
+3 Start tomcat as a container and name it qaserver.Link with jenkins contianer
+  docker run --name  qaserver -it -p 6060:8080 -d --link devserver:jenkins tomcat
+
+4 To access the home page of tomcat qaserver
+  Launch any browser
+  ipaddress_of_dockerhost:6060
+
+5 Start another tomcat as a container and name it prodserver.Link with jenkins
+  docker run --name  prodserver -it -p 7070:8080 -d --link devserver:jenkins tomcat
+
+6 To access the home page of tomcat prodserver
+  Launch any browser
+  ipaddress_of_dockerhost:7070
+

@@ -1,0 +1,256 @@
+1 Start nginx as a service and name it webserver
+  docker service create --name webserver -p 8888:80
+                                         --replicas 5  nginx
+
+2 To see the list of nodes where all these 5 replcias are running
+  docker service ps webserver
+
+3 To delete the service from swarm
+  docker service rm webserver
+1 Start mysql as a servcie in swarm and name it mydb with 3 replicas
+  docker service create --name mydb --replicas 3 
+                        -e MYSQL_ROOT_PASSWORD=intelliq mysql:5
+
+2 To see the list of nodes on which the mydb service is running
+  docker service ps mydb
+
+############################################################333
+1 Start tomcat with 5 replicas in swarm
+  docker service create --name appserver -p 7070:8080
+                                                  --replicas 5 tomcat
+
+2 To check where the 5 replcias are running
+  docker service ps appserver
+
+3 Increase the replicas count from 5 to 10
+  docker service scale appserver=10
+
+4 To check where the 10 replcias are running
+  docker service ps appserver
+=================================================
+1 Start redis:3 with 5 replicas in swarm
+  docker service create --name myredis --replicas 5 redis:3
+
+2 To check if redis:3 is running with 5 replicas
+  docker service ps myredis
+
+3 To update redis:3 to redis:4 (rolling update)
+  docker service update --image redis:4 myredis
+
+4 check if redis:3 replicas are shut down and in its place redis:4 is up
+  docker service ps myredis
+
+5 Roll back redis:4 to redis:3 version
+  docker service update --rollback myredis
+
+6 Check if again redis:3 is up and redis:4 is down
+  docker service ps myredis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Syntax of Scripted Pipeline
+================================
+node('master/slave')
+{
+  stage('Stage name in CI-CD')
+  {
+     Groovy code for implementing that stage
+  }
+}
+
+Syntax of Declarative Pipeline
+====================================
+pipeline
+{
+  agent any/master/slave
+  stages
+  {
+    stage('Stage name in CI-CD')
+    {
+      steps
+      {
+         Groovy code for implementing that stage
+      }
+   }
+}
+
+node('master') 
+
+{
+  
+  
+   stage('ContinuousDownload') 
+  
+   {
+    
+      git 'https://github.com/selenium-saikrishna/maven.git'
+  
+   }
+  
+   stage('ContinuousBuild') 
+  
+   {
+    
+     sh label: '', script: 'mvn package'
+  
+   }
+
+  
+  
+  
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+
+
+Copying artifacts from Development job to Testing job
+==========================================================
+The artifacts created by the development job should be accessable by testing job so that
+the Testing job can do the deployment into tomcat in prodservers.This can be done using a plugin "Copy Artifact" plugin
+
+1 Open the dashboard of jenkins
+2 Click on Manage Jenkins
+3 Click on Manage Plugins
+4 Go to Available section--->Search for Copy artifact plugin
+5 Install it
+6 Go to the dashboard of Jenkins
+7 Go to Development job--->click on configure
+8 Go to Post build actions--->click on Archive the artifacts
+9 enter files to be archived as **\*.war
+10 Apply--->Save
+11 Open the dashboard of Jenkins
+12 Go to the Testing job--->click on configure
+13 Go to Build section--->click on Copy artifacts from another project
+14 Enter project name as Development--->Apply--->save
+
+Stage 5 (Continuous Delivery)
+====================================
+1 Open the dashboard of jenkins
+2 Go to Testing job
+3 Click on Configure
+4 Go to Post build actions
+5 Click on Deploy war/ear to container
+6 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
